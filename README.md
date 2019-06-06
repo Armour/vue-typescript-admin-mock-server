@@ -4,7 +4,25 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Template from jarvis](https://img.shields.io/badge/Hi-Jarvis-ff69b4.svg)](https://github.com/Armour/Jarvis)
 
-Mock server for vue-typecript-admin-template
+Mock server for [vue-typecript-admin-template](https://github.com/Armour/vue-typescript-admin-template) project
+
+## Overview
+
+The js code in this project is generated from typescript version code located at [here](https://github.com/Armour/vue-typescript-admin-template/tree/full-features/mock)
+
+## Set up
+
+First install all dependencies:
+
+```bash
+yarn # OR npm install
+```
+
+Then you can run the server up:
+
+```bash
+yarn mock # OR npm run mock
+```
 
 ## Contributing
 
