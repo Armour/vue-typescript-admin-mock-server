@@ -123,4 +123,3 @@ exports.deleteUser = (req, res) => {
         code: 20000
     });
 };
-//# sourceMappingURL=users.js.map

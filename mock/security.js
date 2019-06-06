@@ -10,4 +10,3 @@ exports.accessTokenAuth = (req, res, next) => {
     }
     next();
 };
-//# sourceMappingURL=security.js.map

@@ -78,4 +78,3 @@ function onError(error) {
             throw error;
     }
 }
-//# sourceMappingURL=mock-server.js.map

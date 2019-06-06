@@ -22,4 +22,3 @@ exports.getTransactions = (req, res) => {
         }
     });
 };
-//# sourceMappingURL=transactions.js.map

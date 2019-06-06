@@ -75,4 +75,3 @@ exports.getRoutes = (req, res) => {
         data: routes
     });
 };
-//# sourceMappingURL=index.js.map

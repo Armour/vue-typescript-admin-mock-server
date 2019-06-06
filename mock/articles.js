@@ -103,4 +103,3 @@ exports.getPageviews = (req, res) => {
         }
     });
 };
-//# sourceMappingURL=articles.js.map
