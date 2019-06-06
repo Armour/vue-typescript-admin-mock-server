@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "mock/index.js",
+      "src": "index.js",
       "use": "@now/node-server"
     }
   ]
