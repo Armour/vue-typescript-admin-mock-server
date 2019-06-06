@@ -1,0 +1,100 @@
+# Details per file setting:
+#   text    These files should be normalized (i.e. convert CRLF to LF).
+#   binary  These files are binary and should be left untouched.
+
+# Auto detect text files and perform LF normalization
+* text=auto
+# The above will handle all files NOT found below
+
+# SOURCE CODE
+*.bat      text eol=crlf
+*.sh       text eol=lf
+
+# COMPILED FILES
+*.dll   binary
+*.dylib binary
+*.exe   binary
+*.so    binary
+
+# DOCUMENTATION
+*.md         text
+*.txt        text
+LICENSE      text
+
+# CONFIGS
+.editorconfig  text
+.gitattributes text
+.gitignore     text
+*.conf         text
+*.config       text
+*.json         text
+*.lock         text
+*.toml         text
+*.yaml         text
+*.yml          text
+
+# GRAPHICS
+*.ai   binary
+*.bmp  binary
+*.eps  binary
+*.gif  binary
+*.heic binary
+*.ico  binary
+*.jpeg binary
+*.jpg  binary
+*.pdf  binary
+*.png  binary
+*.psb  binary
+*.psd  binary
+*.svg  text
+*.tif  binary
+*.tiff binary
+*.wbmp binary
+*.webp binary
+
+# AUDIO
+*.aac  binary
+*.flac binary
+*.m4a  binary
+*.mid  binary
+*.midi binary
+*.mp3  binary
+*.mp4a binary
+*.mpga binary
+*.oga  binary
+*.ogg  binary
+*.wav  binary
+*.weba binary
+
+# VIDEO
+*.3g2  binary
+*.3gp  binary
+*.asf  binary
+*.avi  binary
+*.f4v  binary
+*.fla  binary
+*.flv  binary
+*.m4v  binary
+*.mov  binary
+*.mp4  binary
+*.mpeg binary
+*.mpg  binary
+*.ogv  binary
+*.qt   binary
+*.swf  binary
+*.webm binary
+
+# ARCHIVES
+*.7z  binary
+*.gz  binary
+*.jar binary
+*.rar binary
+*.tar binary
+*.zip binary
+
+# FONTS
+*.eot   binary
+*.otf   binary
+*.ttf   binary
+*.woff  binary
+*.woff2 binary
