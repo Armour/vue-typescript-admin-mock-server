@@ -4,7 +4,7 @@
   "private": true,
   "author": "Chong Guo <armourcy@gmail.com>",
   "scripts": {
-    "mock": "node index.js"
+    "mock": "node mock/index.js"
   },
   "dependencies": {
     "@types/compression": "^0.0.36",

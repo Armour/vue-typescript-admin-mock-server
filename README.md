@@ -8,7 +8,7 @@ Mock server for [vue-typecript-admin-template](https://github.com/Armour/vue-typ
 
 ## Overview
 
-The js code in this project is generated from typescript version code located at [here](https://github.com/Armour/vue-typescript-admin-template/tree/full-features/mock)
+The js code under `mock` folder in this project was generated from the typescript source code located at [here](https://github.com/Armour/vue-typescript-admin-template/tree/full-features/mock)
 
 ## Set up
 
@@ -18,7 +18,7 @@ First install all dependencies:
 yarn # OR npm install
 ```
 
-Then you can run the server up:
+Then you can set up the server:
 
 ```bash
 yarn mock # OR npm run mock
