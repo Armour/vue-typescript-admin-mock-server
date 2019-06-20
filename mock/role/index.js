@@ -37,7 +37,10 @@ const roles = [
 exports.getRoles = (req, res) => {
     return res.json({
         code: 20000,
-        data: roles
+        data: {
+            total: roles.length,
+            items: roles
+        }
     });
 };
 exports.createRole = (req, res) => {
@@ -49,19 +52,12 @@ exports.createRole = (req, res) => {
     });
 };
 exports.updateRole = (req, res) => {
-    const { id } = req.params;
-    const { data } = req.body;
-    for (const role of roles) {
-        if (role.key === id) {
-            return res.json({
-                code: 20000,
-                data
-            });
-        }
-    }
+    const { role } = req.body;
     return res.json({
-        code: 70001,
-        message: 'Role not found'
+        code: 20000,
+        data: {
+            role
+        }
     });
 };
 exports.deleteRole = (req, res) => {
@@ -72,6 +68,8 @@ exports.deleteRole = (req, res) => {
 exports.getRoutes = (req, res) => {
     return res.json({
         code: 20000,
-        data: routes
+        data: {
+            routes
+        }
     });
 };
