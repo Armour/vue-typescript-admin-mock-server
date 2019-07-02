@@ -16,7 +16,7 @@ The javascript code under `mock` folder in this project was generated from the t
 
 ## Swagger
 
-The url schema is based on [Swagger config file](https://github.com/Armour/vue-typescript-admin-template/blob/full-features/mock/swagger.yml) and follows REST api standard.
+The url schema is based on [Swagger config file](https://github.com/Armour/vue-typescript-admin-template/blob/master/mock/swagger.yml) and follows REST api standard.
 
 ```txt
 info: {
