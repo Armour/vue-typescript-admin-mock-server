@@ -12,7 +12,7 @@ Mock server for [vue-typecript-admin-template](https://github.com/Armour/vue-typ
 
 ## Overview
 
-The javascript code under `mock` folder in this project was generated from the typescript source code located at [here](https://github.com/Armour/vue-typescript-admin-template/tree/full-features/mock)
+The javascript code under `mock` folder in this project was generated from the typescript source code located at [here](https://github.com/Armour/vue-typescript-admin-template/tree/master/mock)
 
 ## Swagger
 
