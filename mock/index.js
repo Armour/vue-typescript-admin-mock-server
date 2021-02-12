@@ -9,6 +9,7 @@ const cors_1 = tslib_1.__importDefault(require("cors"));
 const http_1 = tslib_1.__importDefault(require("http"));
 const path_1 = tslib_1.__importDefault(require("path"));
 const yamljs_1 = tslib_1.__importDefault(require("yamljs"));
+const swaggerUi = require('swagger-ui-express');
 const api = tslib_1.__importStar(require("./api"));
 const security_1 = require("./security");
 const app = express_1.default();
@@ -46,6 +47,8 @@ connectSwagger(app);
 // Print swagger router api summary
 const apiSummary = summarise(apiDefinition);
 console.log(apiSummary);
+// Swagger ui
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(apiDefinition));
 // Catch 404 error
 app.use((req, res, next) => {
     const err = new Error('Not Found');
