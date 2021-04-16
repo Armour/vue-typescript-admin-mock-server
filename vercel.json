@@ -1,7 +1,7 @@
 {
   "functions": {
-    "api/*.js": {
-      "includeFiles": "swagger.yml"
+    "api/index.js": {
+      "includeFiles": "**/*.yml"
     }
   },
   "headers": [
