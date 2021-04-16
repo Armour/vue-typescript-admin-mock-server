@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/*.js": {
+      "includeFiles": "swagger.yml"
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
