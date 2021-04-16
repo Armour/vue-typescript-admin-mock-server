@@ -12,7 +12,7 @@ Mock server for [vue-typecript-admin-template](https://github.com/Armour/vue-typ
 
 ## Overview
 
-The javascript code under `mock` folder in this project was generated from the typescript source code located at [here](https://github.com/Armour/vue-typescript-admin-template/tree/master/mock)
+The javascript code under `api` folder in this project was generated from the typescript source code located at [here](https://github.com/Armour/vue-typescript-admin-template/tree/master/mock) (by running `tsc` command in this directory). The only manually change is to rename the `mock-server.js` to `index.js`.
 
 ## Swagger
 
@@ -69,6 +69,12 @@ Then you can set up the server:
 ```bash
 yarn mock # OR npm run mock
 ```
+
+or use the `vercel dev` command.
+
+## Host
+
+This mock server is hosted by [Vercel](https://vercel.com/guides/using-express-with-vercel).
 
 ## Contributing
 

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.accessTokenAuth = (req, res, next) => {
+exports.accessTokenAuth = void 0;
+const accessTokenAuth = (req, res, next) => {
     const accessToken = req.header('X-Access-Token');
     if (!accessToken) {
         return res.status(401).json({
@@ -10,3 +11,4 @@ exports.accessTokenAuth = (req, res, next) => {
     }
     next();
 };
+exports.accessTokenAuth = accessTokenAuth;

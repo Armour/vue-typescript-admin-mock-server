@@ -1,6 +1,7 @@
 "use strict";
 // Just a mock data
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.asyncRoutes = exports.constantRoutes = void 0;
 exports.constantRoutes = [
     {
         path: '/redirect',
@@ -8,7 +9,7 @@ exports.constantRoutes = [
         meta: { hidden: true },
         children: [
             {
-                path: '/redirect/:path*',
+                path: '/redirect/:path(.*)',
                 component: 'views/redirect/index'
             }
         ]
@@ -169,9 +170,9 @@ exports.asyncRoutes = [
                 meta: { title: 'jsonEditor' }
             },
             {
-                path: 'splitpane',
-                component: 'views/components-demo/splitpane',
-                name: 'SplitpaneDemo',
+                path: 'split-pane',
+                component: 'views/components-demo/split-pane',
+                name: 'SplitPaneDemo',
                 meta: { title: 'splitPane' }
             },
             {
@@ -596,17 +597,11 @@ exports.asyncRoutes = [
         ]
     },
     {
-        path: 'external-link',
-        component: 'Layout',
-        children: [
-            {
-                path: 'https://github.com/Armour/vue-typescript-admin-template',
-                meta: {
-                    title: 'externalLink',
-                    icon: 'link'
-                }
-            }
-        ]
+        path: 'https://github.com/Armour/vue-typescript-admin-template',
+        meta: {
+            title: 'externalLink',
+            icon: 'link'
+        }
     },
     {
         path: '*',

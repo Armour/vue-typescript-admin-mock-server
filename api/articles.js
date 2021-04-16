@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getPageviews = exports.deleteArticle = exports.updateArticle = exports.createArticle = exports.getArticle = exports.getArticles = void 0;
 const tslib_1 = require("tslib");
 const faker_1 = tslib_1.__importDefault(require("faker"));
 const articleList = [];
@@ -8,7 +9,7 @@ const mockFullContent = '<p>I am testing data, I am testing data.</p><p><img src
 for (let i = 0; i < articleCount; i++) {
     articleList.push({
         id: i,
-        status: faker_1.default.random.arrayElement(['published', 'draft', 'deleted']),
+        status: faker_1.default.random.arrayElement(['published', 'draft']),
         title: faker_1.default.lorem.sentence(6, 10),
         abstractContent: faker_1.default.lorem.sentences(2),
         fullContent: mockFullContent,
@@ -16,15 +17,15 @@ for (let i = 0; i < articleCount; i++) {
         imageURL: faker_1.default.image.imageUrl(),
         timestamp: faker_1.default.date.past().getTime(),
         platforms: [faker_1.default.random.arrayElement(['a-platform', 'b-platform', 'c-platform'])],
-        disableComment: faker_1.default.random.boolean(),
-        importance: faker_1.default.random.number({ min: 1, max: 3 }),
+        disableComment: faker_1.default.datatype.boolean(),
+        importance: faker_1.default.datatype.number({ min: 1, max: 3 }),
         author: faker_1.default.name.findName(),
         reviewer: faker_1.default.name.findName(),
         type: faker_1.default.random.arrayElement(['CN', 'US', 'JP', 'EU']),
-        pageviews: faker_1.default.random.number({ min: 300, max: 500 })
+        pageviews: faker_1.default.datatype.number({ min: 300, max: 500 })
     });
 }
-exports.getArticles = (req, res) => {
+const getArticles = (req, res) => {
     const { importance, type, title, page = 1, limit = 20, sort } = req.query;
     let mockList = articleList.filter(item => {
         if (importance && item.importance !== +importance)
@@ -47,7 +48,8 @@ exports.getArticles = (req, res) => {
         }
     });
 };
-exports.getArticle = (req, res) => {
+exports.getArticles = getArticles;
+const getArticle = (req, res) => {
     const { id } = req.params;
     for (const article of articleList) {
         if (article.id.toString() === id) {
@@ -64,7 +66,8 @@ exports.getArticle = (req, res) => {
         message: 'Article not found'
     });
 };
-exports.createArticle = (req, res) => {
+exports.getArticle = getArticle;
+const createArticle = (req, res) => {
     const { article } = req.body;
     return res.json({
         code: 20000,
@@ -73,7 +76,8 @@ exports.createArticle = (req, res) => {
         }
     });
 };
-exports.updateArticle = (req, res) => {
+exports.createArticle = createArticle;
+const updateArticle = (req, res) => {
     const { id } = req.params;
     const { article } = req.body;
     for (const v of articleList) {
@@ -91,12 +95,14 @@ exports.updateArticle = (req, res) => {
         message: 'Article not found'
     });
 };
-exports.deleteArticle = (req, res) => {
+exports.updateArticle = updateArticle;
+const deleteArticle = (req, res) => {
     return res.json({
-        code: 20000,
+        code: 20000
     });
 };
-exports.getPageviews = (req, res) => {
+exports.deleteArticle = deleteArticle;
+const getPageviews = (req, res) => {
     return res.json({
         code: 20000,
         data: {
@@ -109,3 +115,4 @@ exports.getPageviews = (req, res) => {
         }
     });
 };
+exports.getPageviews = getPageviews;

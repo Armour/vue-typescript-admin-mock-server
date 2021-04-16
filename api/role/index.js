@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getRoutes = exports.deleteRole = exports.updateRole = exports.createRole = exports.getRoles = void 0;
 const tslib_1 = require("tslib");
 const faker_1 = tslib_1.__importDefault(require("faker"));
 const routes_1 = require("./routes");
@@ -34,7 +35,7 @@ const roles = [
             }]
     }
 ];
-exports.getRoles = (req, res) => {
+const getRoles = (req, res) => {
     return res.json({
         code: 20000,
         data: {
@@ -43,15 +44,17 @@ exports.getRoles = (req, res) => {
         }
     });
 };
-exports.createRole = (req, res) => {
+exports.getRoles = getRoles;
+const createRole = (req, res) => {
     return res.json({
         code: 20000,
         data: {
-            key: faker_1.default.random.number({ min: 3, max: 10000 })
+            key: faker_1.default.datatype.number({ min: 3, max: 10000 })
         }
     });
 };
-exports.updateRole = (req, res) => {
+exports.createRole = createRole;
+const updateRole = (req, res) => {
     const { role } = req.body;
     return res.json({
         code: 20000,
@@ -60,12 +63,14 @@ exports.updateRole = (req, res) => {
         }
     });
 };
-exports.deleteRole = (req, res) => {
+exports.updateRole = updateRole;
+const deleteRole = (req, res) => {
     return res.json({
-        code: 20000,
+        code: 20000
     });
 };
-exports.getRoutes = (req, res) => {
+exports.deleteRole = deleteRole;
+const getRoutes = (req, res) => {
     return res.json({
         code: 20000,
         data: {
@@ -73,3 +78,4 @@ exports.getRoutes = (req, res) => {
         }
     });
 };
+exports.getRoutes = getRoutes;

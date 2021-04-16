@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.deleteUser = exports.updateUser = exports.getUserByName = exports.getUserInfo = exports.getUsers = exports.logout = exports.login = exports.register = void 0;
 const tslib_1 = require("tslib");
 const faker_1 = tslib_1.__importDefault(require("faker"));
 const userList = [
@@ -12,7 +13,7 @@ const userList = [
         introduction: 'I am a super administrator',
         email: 'admin@test.com',
         phone: '1234567890',
-        roles: ['admin'],
+        roles: ['admin']
     },
     {
         id: 1,
@@ -23,7 +24,7 @@ const userList = [
         introduction: 'I am an editor',
         email: 'editor@test.com',
         phone: '1234567890',
-        roles: ['editor'],
+        roles: ['editor']
     }
 ];
 const userCount = 100;
@@ -40,12 +41,13 @@ for (let i = 2; i < userCount; i++) {
         roles: ['visitor']
     });
 }
-exports.register = (req, res) => {
+const register = (req, res) => {
     return res.json({
         code: 20000
     });
 };
-exports.login = (req, res) => {
+exports.register = register;
+const login = (req, res) => {
     const { username } = req.body;
     for (const user of userList) {
         if (user.username === username) {
@@ -62,12 +64,14 @@ exports.login = (req, res) => {
         messaege: 'Invalid User'
     });
 };
-exports.logout = (req, res) => {
+exports.login = login;
+const logout = (req, res) => {
     return res.json({
         code: 20000
     });
 };
-exports.getUsers = (req, res) => {
+exports.logout = logout;
+const getUsers = (req, res) => {
     const { name } = req.query;
     const users = userList.filter(user => {
         const lowerCaseName = user.name.toLowerCase();
@@ -80,16 +84,18 @@ exports.getUsers = (req, res) => {
         }
     });
 };
-exports.getUserInfo = (req, res) => {
+exports.getUsers = getUsers;
+const getUserInfo = (req, res) => {
     // Mock data based on access token
     return res.json({
         code: 20000,
         data: {
-            user: req.header('X-Access-Token') == 'admin-token' ? userList[0] : userList[1]
+            user: req.header('X-Access-Token') === 'admin-token' ? userList[0] : userList[1]
         }
     });
 };
-exports.getUserByName = (req, res) => {
+exports.getUserInfo = getUserInfo;
+const getUserByName = (req, res) => {
     const { username } = req.params;
     for (const user of userList) {
         if (user.username === username) {
@@ -106,7 +112,8 @@ exports.getUserByName = (req, res) => {
         messaege: 'Invalid User'
     });
 };
-exports.updateUser = (req, res) => {
+exports.getUserByName = getUserByName;
+const updateUser = (req, res) => {
     const { username } = req.params;
     const { user } = req.body;
     for (const v of userList) {
@@ -124,8 +131,10 @@ exports.updateUser = (req, res) => {
         messaege: 'Invalid User'
     });
 };
-exports.deleteUser = (req, res) => {
+exports.updateUser = updateUser;
+const deleteUser = (req, res) => {
     return res.json({
         code: 20000
     });
 };
+exports.deleteUser = deleteUser;
